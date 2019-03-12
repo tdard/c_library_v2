@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<mavlink>
+
+    <include>common.xml</include>
+    <!-- <version>9</version> -->
+    <dialect>8</dialect>
+
+    <enums>
+        <enum name="GDP_UAV_STATE_ENUM">
+		    <description>Description of the state of the UAV used in the Group Design Project of AVDC Student of Cranfield university</description>
+		    <entry value="0" name="GDP_UAV_STATE_TRACK">
+		        <description>UAV is tracking an enemy target</description>
+		    </entry>
+		    <entry value="1" name="GDP_UAV_STATE_AVOID">
+		        <description>UAV is avoiding any drone it detects</description>
+		    </entry>
+		    <entry value="2" name="GDP_UAV_STATE_DEFEND">
+		        <description>UAV is patrolling in a defense zone</description>
+		    </entry>
+		    <entry value="3" name="GDP_UAV_STATE_ATTACK_PATROL">
+		        <description>UAV is patrolling in an attack zone</description>
+		    </entry>
+		    <entry value="4" name="GDP_UAV_STATE_ATTACK_DROP">
+		        <description>UAV is going to drone a payload in a zone to attack</description>
+		    </entry>
+		</enum>
+    
+
+	    <enum name="MAV_CMD">
+		    <entry value="96000" name="MAV_CMD_NAV_GDP_PAYLOAD_PLACE">
+		        <description>Descend and place payload. Vehicle descends until it detects a hanging payload has reached the ground, the gripper is opened to release the payload</description>
+		        <param index="1">Empty</param>
+		        <param index="2">Empty</param>
+		        <param index="3">Empty</param>
+		        <param index="4">Empty</param>
+		        <param index="5">Latitude (deg * 1E7)</param>
+		        <param index="6">Longitude (deg * 1E7)</param>
+		        <param index="7">Altitude (meters)</param>
+			</entry>
+
+			<entry value="96010" name="MAV_CMD_REQUEST_GDP_UAV_STATE">
+		        <description>Request the UAV State described by GDP_UAV_STATE</description>
+		        <param index="1">Empty</param>
+		        <param index="2">Empty</param>
+		        <param index="3">Empty</param>
+		        <param index="4">Empty</param>
+		        <param index="5">Empty</param>
+		        <param index="6">Empty</param>
+		        <param index="7">Empty</param>
+			</entry>
+		</enum>
+	</enums>
+
+
+	<messages>
+	    <message id="96100" name="GDP_UAV_STATE">
+	      <description>This message describes the state of the UAV</description>
+	      <field type="uint64_t" name="timestamp">Timestamp</field>
+	      <field type="uint8_t" name="target_system">System ID</field>
+	      <field type="uint8_t" name="target_component">Component ID</field>
+	      <field type="uint8_t" name="frame" enum="MAV_FRAME">Coordinate frame. Can be either global, GPS, right-handed with Z axis up or local, right handed, Z axis down.</field>
+	      <field type="uint8_t" name="state" enum="GDP_UAV_STATE_ENUM">UAV State</field>
+	    </message>
+    </messages>
+
+</mavlink>
