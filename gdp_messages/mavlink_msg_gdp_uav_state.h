@@ -1,7 +1,7 @@
 #pragma once
 // MESSAGE GDP_UAV_STATE PACKING
 
-#define MAVLINK_MSG_ID_GDP_UAV_STATE 96100
+#define MAVLINK_MSG_ID_GDP_UAV_STATE 50100
 
 MAVPACKED(
 typedef struct __mavlink_gdp_uav_state_t {
@@ -14,17 +14,17 @@ typedef struct __mavlink_gdp_uav_state_t {
 
 #define MAVLINK_MSG_ID_GDP_UAV_STATE_LEN 12
 #define MAVLINK_MSG_ID_GDP_UAV_STATE_MIN_LEN 12
-#define MAVLINK_MSG_ID_96100_LEN 12
-#define MAVLINK_MSG_ID_96100_MIN_LEN 12
+#define MAVLINK_MSG_ID_50100_LEN 12
+#define MAVLINK_MSG_ID_50100_MIN_LEN 12
 
 #define MAVLINK_MSG_ID_GDP_UAV_STATE_CRC 72
-#define MAVLINK_MSG_ID_96100_CRC 72
+#define MAVLINK_MSG_ID_50100_CRC 72
 
 
 
 #if MAVLINK_COMMAND_24BIT
 #define MAVLINK_MESSAGE_INFO_GDP_UAV_STATE { \
-    96100, \
+    50100, \
     "GDP_UAV_STATE", \
     5, \
     {  { "timestamp", NULL, MAVLINK_TYPE_UINT64_T, 0, 0, offsetof(mavlink_gdp_uav_state_t, timestamp) }, \

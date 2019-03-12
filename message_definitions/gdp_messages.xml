@@ -27,7 +27,7 @@
     
 
 	    <enum name="MAV_CMD">
-		    <entry value="96000" name="MAV_CMD_NAV_GDP_PAYLOAD_PLACE">
+		    <entry value="50000" name="MAV_CMD_NAV_GDP_PAYLOAD_PLACE">
 		        <description>Descend and place payload. Vehicle descends until it detects a hanging payload has reached the ground, the gripper is opened to release the payload</description>
 		        <param index="1">Empty</param>
 		        <param index="2">Empty</param>
@@ -38,7 +38,7 @@
 		        <param index="7">Altitude (meters)</param>
 			</entry>
 
-			<entry value="96010" name="MAV_CMD_REQUEST_GDP_UAV_STATE">
+			<entry value="50010" name="MAV_CMD_REQUEST_GDP_UAV_STATE">
 		        <description>Request the UAV State described by GDP_UAV_STATE</description>
 		        <param index="1">Empty</param>
 		        <param index="2">Empty</param>
@@ -53,7 +53,7 @@
 
 
 	<messages>
-	    <message id="96100" name="GDP_UAV_STATE">
+	    <message id="50100" name="GDP_UAV_STATE">
 	      <description>This message describes the state of the UAV</description>
 	      <field type="uint64_t" name="timestamp">Timestamp</field>
 	      <field type="uint8_t" name="target_system">System ID</field>
